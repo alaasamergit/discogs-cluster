@@ -30,6 +30,5 @@ def fetch_songs(title):
     result = client.search(index=index_name, body=query) 
     print(result)
     if result["hits"]["hits"]:
-        
-        return result["hits"]["hits"][0]["_source"]
+        return result
     return [title]

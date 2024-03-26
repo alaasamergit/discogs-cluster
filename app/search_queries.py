@@ -24,9 +24,12 @@ index_name = 'discogs_releases'
 def fetch_songs(title):
     query = {
         "query": {
-            "match_all": {}
+            "multi_match": {
+            "query": title,
+            "fields": ["title", "artist"]
+            }
         }
-    }
+        }
     result = client.search(index=index_name, body=query) 
     print(result)
     if result["hits"]["hits"]:

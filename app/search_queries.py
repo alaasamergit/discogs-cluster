@@ -24,10 +24,7 @@ index_name = 'discogs_releases'
 def fetch_songs(title):
     query = {
         "query": {
-            "term": {
-                # needs to be exact match by keyword
-                "title": title
-            }
+            "match_all": {}
         }
     }
     result = client.search(index=index_name, body=query) 

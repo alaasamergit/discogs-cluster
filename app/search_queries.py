@@ -34,4 +34,4 @@ def fetch_songs(title):
     print(result)
     if result["hits"]["hits"]:
         return result
-    return [title]
+    return {"title": title}
